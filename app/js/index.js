@@ -2445,8 +2445,8 @@ async function generateInstructions() {
         const pdfWidth = pdf.internal.pageSize.getWidth();
         const pdfHeight = pdf.internal.pageSize.getHeight();
 
-       // const totalPlates = resultImage.length / (4 * PLATE_WIDTH * PLATE_WIDTH);
-        const totalPlates = resultImage.length / (PLATE_WIDTH * PLATE_WIDTH);
+        const totalPlates = resultImage.length / (4 * PLATE_WIDTH * PLATE_WIDTH);
+        //const totalPlates = resultImage.length / (PLATE_WIDTH * PLATE_WIDTH);//PABLO
 
         document.getElementById("pdf-progress-bar").style.width = `${100 / (totalPlates + 1)}%`;
 
