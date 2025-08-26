@@ -2430,12 +2430,18 @@ async function generateInstructions() {
 
         const imgData = titlePageCanvas.toDataURL("image/png", 1.0);
 
-        let pdf = new jsPDF({
-            orientation: titlePageCanvas.width < titlePageCanvas.height ? "p" : "l",
-            unit: "mm",
-            format: [titlePageCanvas.width, titlePageCanvas.height],
-        });
-
+       // let pdf = new jsPDF({
+          //  orientation: titlePageCanvas.width < titlePageCanvas.height ? "p" : "l",  
+        //    unit: "mm",
+         //  format: [titlePageCanvas.width, titlePageCanvas.height],
+           
+      //  });
+            let pdf = new jsPDF({
+              orientation: "l", // landscape
+              unit: "mm",
+              format: "a4" // 297x210 mm → espacio suficiente
+            });
+        
         const pdfWidth = pdf.internal.pageSize.getWidth();
         const pdfHeight = pdf.internal.pageSize.getHeight();
 
@@ -2487,6 +2493,7 @@ async function generateInstructions() {
                           PLATE_WIDTH,
                           PLATE_WIDTH
                       );
+           
                generateInstructionPage(
                 subPixelArray,
                 PLATE_WIDTH,
