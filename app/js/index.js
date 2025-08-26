@@ -2469,6 +2469,8 @@ async function generateInstructions() {
 
             const instructionPageCanvas = document.createElement("canvas");
             instructionsCanvasContainer.appendChild(instructionPageCanvas);
+            instructionPageCanvas.width = 900;  // ancho total: mosaico + espacio para texto/PABLO
+            instructionPageCanvas.height = 640; // altura del mosaico/PABLO
 
             const subPixelArray = getSubPixelArray(resultImage, i, targetResolution[0], PLATE_WIDTH);
 
@@ -2485,7 +2487,7 @@ async function generateInstructions() {
                           PLATE_WIDTH,
                           PLATE_WIDTH
                       );
-            generateInstructionPage(
+               generateInstructionPage(
                 subPixelArray,
                 PLATE_WIDTH,
                 filteredAvailableStudHexList,
